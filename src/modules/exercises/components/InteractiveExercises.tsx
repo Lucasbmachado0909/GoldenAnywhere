@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import type { ListeningMultipleChoiceQuestion } from '../../../types/index';
 import AudioButton from '../../common/components/AudioButton';
-import { useActivityCheck } from '../../lessons/hooks/useActivityCheck';
 import DragDropExercise from './DragDropExercise';
 
 interface InteractiveExercisesProps {

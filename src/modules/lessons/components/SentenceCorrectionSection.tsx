@@ -1,5 +1,4 @@
 // src/modules/lessons/components/SentenceCorrectionSection.tsx
-import React from 'react';
 import type { SentenceCorrectionQuestion } from '../../../types/index';
 import { useSentenceCorrection } from '../hooks/useSentenceCorrection';
 
