@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { ProgressContext } from '../../../contexts/ProgressContext';
+import Logo from './Logo'; // Importe o componente Logo
 
 const Navbar = () => {
   const { progress } = useContext(ProgressContext);
@@ -20,9 +21,9 @@ const Navbar = () => {
     <header className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo - Substituído pelo componente Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-indigo-700">Golden Anywhere</span>
+            <Logo className="h-auto" /> {/* Componente Logo implementado aqui */}
           </Link>
           
           {/* Desktop Navigation */}
