@@ -1,0 +1,30 @@
+{
+  "sections": [
+    {
+      "id": "introduction",
+      "type": "text",
+      "content": "In this lesson, you will learn basic English greetings..."
+    },
+    {
+      "id": "greeting1",
+      "type": "vocabulary",
+      "term": "Hello",
+      "definition": "A common greeting used when meeting someone.",
+      "examples": [
+        "Hello, how are you today?",
+        "Hello, my name is John."
+      ],
+      "audioFile": "hello.mp3"
+    }
+  ],
+  "quiz": {
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Which greeting is used to say goodbye?",
+        "options": ["Hello", "Good morning", "Goodbye", "Nice to meet you"],
+        "correctAnswer": 2
+      }
+    ]
+  }
+}
