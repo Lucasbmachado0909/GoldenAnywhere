@@ -1,7 +1,6 @@
 // src/modules/exercises/components/InteractiveExercises.tsx
 import { useState } from 'react';
 import type { ListeningMultipleChoiceQuestion } from '../../../types/index';
-import AudioButton from '../../common/components/AudioButton';
 import DragDropExercise from './DragDropExercise';
 import ListeningExercise from './ListeningExercise'; // Novo import
 
