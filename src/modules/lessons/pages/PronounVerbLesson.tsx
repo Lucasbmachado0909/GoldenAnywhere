@@ -1,6 +1,5 @@
 // src/modules/lessons/pages/PronounVerbLesson.tsx
 import React from 'react';
-// Removido o import do Layout
 import LessonHeader from '../components/LessonHeader';
 import { ProgressBar } from '../components/ProgressBar';
 import PronounsSection from '../components/PronounsSection';
@@ -10,9 +9,9 @@ import FinalTaskSection from '../components/FinalTaskSection';
 import LessonNavigation from '../components/LessonNavigation';
 import InteractiveExercises from '../../exercises/components/InteractiveExercises';
 import SentenceCorrectionExercise from '../../exercises/components/SentenceCorrectionExercise';
-import ReadingComprehensionExercise from '../../exercises/components/ReadingComprehensionExercise'; // NOVO
+import ReadingComprehensionExercise from '../../exercises/components/ReadingComprehensionExercise';
 import VerbFillExercise from '../../exercises/components/VerbFillExercise';
-import type { ListeningMultipleChoiceQuestion, ReadingComprehensionQuestion } from '../../../types'; // Atualizado
+import type { ListeningMultipleChoiceQuestion, ReadingComprehensionQuestion } from '../../../types';
 
 const PronounVerbLesson: React.FC = () => {
   // Dados para o exercício de correção de frases
@@ -34,7 +33,7 @@ const PronounVerbLesson: React.FC = () => {
     }
   ];
 
-  // NOVO: Dados para o exercício de compreensão de texto
+  // Dados para o exercício de compreensão de texto
   const readingComprehensionData = {
     text: "My name is Lucas. I am 21 years old. I study engineering.\nMy sister is Anna. She works in a school.\nWe play video games together.\nMy parents like pizza. They eat pizza every Friday.",
     questions: [
@@ -72,20 +71,42 @@ const PronounVerbLesson: React.FC = () => {
   const listeningQuestions: ListeningMultipleChoiceQuestion[] = [
     {
       questionText: "What does the speaker say about her job?",
-      audioUrl: "/audio/lesson1/question1.mp3",
+      audioUrl: "/audio/lessons/lesson1/question1.mp3",
       options: ["She is a teacher", "She is a doctor", "She is a student", "She is an engineer"],
       correctOptionIndex: 1
     },
     {
       questionText: "Where do they live?",
-      audioUrl: "/audio/lesson1/question2.mp3",
+      audioUrl: "/audio/lessons/lesson1/question2.mp3",
       options: ["In New York", "In London", "In Paris", "In Tokyo"],
       correctOptionIndex: 2
     }
   ];
 
+  // Dados para a seção de verbos
+  const verbItems = [
+    { verb: 'to be (am/is/are)', translation: 'ser/estar', audioGroup: 'be' },
+    { verb: 'to have', translation: 'ter', audioGroup: 'other' },
+    { verb: 'to go', translation: 'ir', audioGroup: 'other' },
+    { verb: 'to do', translation: 'fazer', audioGroup: 'other' },
+    { verb: 'to like', translation: 'gostar', audioGroup: 'other' }
+  ];
+  
+  // Grupos de áudio para os verbos com caminhos atualizados
+  const verbAudioGroups = [
+    {
+      name: 'be',
+      displayText: 'Verbo "To Be"',
+      audioSrc: '/audio/lessons/lesson1/Tobeverbs.mp3'  // Caminho atualizado
+    },
+    {
+      name: 'other',
+      displayText: 'Outros Verbos',
+      audioSrc: '/audio/lessons/lesson1/Toverbs.mp3'  // Caminho atualizado
+    }
+  ];
+
   return (
-    // Removido o wrapper Layout
     <div className="max-w-4xl mx-auto px-4 py-8">
       <LessonHeader title="Pronomes e Verbos Básicos" />
       <ProgressBar progress={0} total={5} />
@@ -111,17 +132,12 @@ const PronounVerbLesson: React.FC = () => {
         
         <VerbsSection 
           title="Verbos Básicos"
-          items={[
-            { verb: 'to be (am/is/are)', translation: 'ser/estar' },
-            { verb: 'to have', translation: 'ter' },
-            { verb: 'to go', translation: 'ir' },
-            { verb: 'to do', translation: 'fazer' },
-            { verb: 'to like', translation: 'gostar' }
-          ]}
+          items={verbItems}
           audioSection={{
             title: "Pronúncia dos Verbos",
-            description: "Escute a pronúncia dos verbos mais comuns em inglês."
+            description: "Escute a pronúncia dos verbos em inglês. Clique nos botões abaixo para ouvir cada grupo de verbos."
           }}
+          audioGroups={verbAudioGroups}
         />
         
         <SentenceStructureSection 
@@ -151,7 +167,7 @@ const PronounVerbLesson: React.FC = () => {
             <SentenceCorrectionExercise questions={sentenceCorrectionQuestions} />
           </div>
           
-          {/* NOVO: Exercício de compreensão de texto */}
+          {/* Exercício de compreensão de texto */}
           <div className="mt-10">
             <ReadingComprehensionExercise 
               title="Compreensão de Texto"

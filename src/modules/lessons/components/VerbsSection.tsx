@@ -1,9 +1,17 @@
+// src/modules/lessons/components/VerbsSection.tsx
 import React from 'react';
 import AudioButton from '../../common/components/AudioButton';
 
 interface VerbItem {
   verb: string;
   translation: string;
+  audioGroup?: string; // Adicionado para identificar o grupo de áudio
+}
+
+interface AudioGroup {
+  name: string;
+  displayText: string;
+  audioSrc: string;
 }
 
 interface VerbsSectionProps {
@@ -13,9 +21,15 @@ interface VerbsSectionProps {
     title: string;
     description: string;
   };
+  audioGroups: AudioGroup[]; // Nova prop para os grupos de áudio
 }
 
-const VerbsSection: React.FC<VerbsSectionProps> = ({ title, items, audioSection }) => {
+const VerbsSection: React.FC<VerbsSectionProps> = ({ 
+  title, 
+  items, 
+  audioSection,
+  audioGroups 
+}) => {
   return (
     <section className="mb-10">
       <h2 className="text-3xl sm:text-4xl font-bold text-blue-700 mb-6 border-b-2 border-blue-200 pb-3">
@@ -35,11 +49,13 @@ const VerbsSection: React.FC<VerbsSectionProps> = ({ title, items, audioSection 
             {audioSection.description}
           </p>
           <div className="flex flex-wrap gap-2">
-            {items.map((item) => (
+            {/* Renderizar botões de áudio para cada grupo */}
+            {audioGroups.map((group) => (
               <AudioButton 
-                key={item.verb}
-                text={item.verb}
-                audioSrc={`/audio/${item.verb}.mp3`}
+                key={group.name}
+                text={group.displayText}
+                audioSrc={group.audioSrc}
+                className="mb-2"
               />
             ))}
           </div>
