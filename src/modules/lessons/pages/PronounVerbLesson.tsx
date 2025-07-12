@@ -2,6 +2,7 @@
 import React from 'react';
 import LessonHeader from '../components/LessonHeader';
 import { ProgressBar } from '../components/ProgressBar';
+import VideoSection from '../components/VideoSection'; 
 import PronounsSection from '../components/PronounsSection';
 import VerbsSection from '../components/VerbsSection';
 import SentenceStructureSection from '../components/SentenceStructureSection';
@@ -11,9 +12,17 @@ import InteractiveExercises from '../../exercises/components/InteractiveExercise
 import SentenceCorrectionExercise from '../../exercises/components/SentenceCorrectionExercise';
 import ReadingComprehensionExercise from '../../exercises/components/ReadingComprehensionExercise';
 import VerbFillExercise from '../../exercises/components/VerbFillExercise';
-import type { ListeningMultipleChoiceQuestion, ReadingComprehensionQuestion } from '../../../types';
+import type { ListeningMultipleChoiceQuestion, ReadingComprehensionQuestion, VideoResource } from '../../../types';
 
 const PronounVerbLesson: React.FC = () => {
+  // APENAS ADICIONAR ESTA DEFINIÇÃO DO VÍDEO
+  const lessonVideo: VideoResource = {
+    id: 'lesson1_intro',
+    title: 'Introdução à Lição 1: Pronomes e Verbos Básicos',
+    src: '/video/lessons/lesson1/VideoLesson1.mp4',
+    duration: 340,
+  };
+
   // Dados para o exercício de correção de frases
   const sentenceCorrectionQuestions = [
     {
@@ -97,12 +106,12 @@ const PronounVerbLesson: React.FC = () => {
     {
       name: 'be',
       displayText: 'Verbo "To Be"',
-      audioSrc: '/audio/lessons/lesson1/Tobeverbs.mp3'  // Caminho atualizado
+      audioSrc: '/audio/lessons/lesson1/Tobeverbs.mp3'
     },
     {
       name: 'other',
       displayText: 'Outros Verbos',
-      audioSrc: '/audio/lessons/lesson1/Toverbs.mp3'  // Caminho atualizado
+      audioSrc: '/audio/lessons/lesson1/Toverbs.mp3'
     }
   ];
 
@@ -112,7 +121,14 @@ const PronounVerbLesson: React.FC = () => {
       <ProgressBar progress={0} total={5} />
       
       <div className="space-y-12 mt-8">
-        {/* Seções de conteúdo com props necessárias */}
+        {/* APENAS ADICIONAR ESTA SEÇÃO DE VÍDEO */}
+        <VideoSection
+          title="Introdução à Lição"
+          description="Assista a este vídeo para uma introdução completa aos conceitos que você irá aprender nesta lição."
+          videoResource={lessonVideo}
+        />
+
+        {/* RESTO PERMANECE EXATAMENTE IGUAL */}
         <PronounsSection 
           title="Pronomes Pessoais" 
           items={[
