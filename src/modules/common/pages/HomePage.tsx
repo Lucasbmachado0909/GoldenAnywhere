@@ -1,3 +1,4 @@
+// src/modules/common/pages/HomePage.tsx
 import { useContext } from 'react';
 import { ProgressContext } from '../../../contexts/ProgressContext';
 import HeroSection from '../components/HeroSection';
@@ -74,7 +75,7 @@ const HomePage = () => {
         title="Aprenda inglês de forma interativa e eficiente"
         subtitle="Aulas dinâmicas, exercícios interativos e acompanhamento personalizado para você dominar o inglês no seu próprio ritmo."
         ctaText="Começar agora"
-        ctaLink={`/lessons/${nextLessonId}`}
+        ctaLink={`/app/lessons/${nextLessonId}`} // 🔧 MUDANÇA: Adicionado /app
       />
       
       {/* Progress & Featured Courses Section */}
@@ -153,7 +154,7 @@ const HomePage = () => {
             Junte-se a milhares de estudantes que estão aprendendo inglês de forma eficaz e divertida.
           </p>
           <a 
-            href={`/lessons/${nextLessonId}`}
+            href={`/app/lessons/${nextLessonId}`} // 🔧 MUDANÇA: Adicionado /app
             className="bg-white text-indigo-600 hover:bg-indigo-50 font-bold py-3 px-8 rounded-lg shadow-lg transition-colors inline-block"
           >
             Começar agora

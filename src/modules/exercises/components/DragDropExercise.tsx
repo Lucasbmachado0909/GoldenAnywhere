@@ -225,7 +225,7 @@ const DragDropExercise = ({ items, targets }: DragDropExerciseProps) => {
                   <p className="flex items-start">
                     <span className={`mr-2 mt-1 ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>
                       {isCorrect ? '✓' : '✗'}
-                    </span>
+                    </span> 
                     <span className="flex-grow">
                       <span className="block mt-1">
                         Sua resposta: {target.itemId !== null ? getItemTextById(target.itemId) : 'Nenhuma resposta'}
