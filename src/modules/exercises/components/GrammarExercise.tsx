@@ -72,7 +72,7 @@ const GrammarExercise: React.FC<GrammarExerciseProps> = ({
 
       <div className="space-y-6">
         {questions.map((question) => {
-          const isAnswered = selectedAnswers[question.id] !== undefined;
+          // 🔧 REMOVIDA a variável 'isAnswered' que não estava sendo usada
           const selectedOption = selectedAnswers[question.id];
           const isCorrect = selectedOption === question.correctAnswer;
 

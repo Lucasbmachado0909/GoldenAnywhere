@@ -11,10 +11,10 @@ import SentenceCorrectionExercise from '../../exercises/components/SentenceCorre
 import ReadingComprehensionExercise from '../../exercises/components/ReadingComprehensionExercise';
 import GrammarExercise from '../../exercises/components/GrammarExercise';
 import VerbFillExercise from '../../exercises/components/VerbFillExercise';
-import TranslationExercise from '../../exercises/components/TranslationExercise'; // 🆕 NOVO IMPORT
+import TranslationExercise from '../../exercises/components/TranslationExercise';
 import QuizSection from '../components/QuizSection';
 import { lesson2Quiz } from '../data/quizzes/lesson2Quiz';
-import type { ListeningMultipleChoiceQuestion, ReadingComprehensionQuestion, VideoResource, QuizSummary } from '../../../types';
+import type { ReadingComprehensionQuestion, VideoResource, QuizSummary } from '../../../types';
 
 const Lesson2: React.FC = () => {
   // Estados para o quiz (mesmo padrão da Lição 1)
@@ -239,21 +239,7 @@ const Lesson2: React.FC = () => {
     }
   ];
 
-  // Dados para o exercício de listening (adaptados para Lição 2)
-  const listeningQuestions: ListeningMultipleChoiceQuestion[] = [
-    {
-      questionText: "What animal is mentioned?",
-      audioUrl: "/audio/lessons/lesson2/What animal is.mp3",
-      options: ["dog", "cat", "bird", "fish"],
-      correctOptionIndex: 0
-    },
-    {
-      questionText: "What drink is mentioned?",
-      audioUrl: "/audio/lessons/lesson2/The drink is.mp3",
-      options: ["water", "juice", "soda", "coffee"],
-      correctOptionIndex: 3
-    }
-  ];
+  // 🔧 REMOVIDA a variável 'listeningQuestions' que não estava sendo usada
 
   // Handler para a conclusão do quiz
   const handleQuizComplete = (summary: QuizSummary) => {
@@ -347,6 +333,21 @@ const Lesson2: React.FC = () => {
               questions={translationQuestions}
             />
           </div>
+        </section>
+        
+        {/* Seção do Quiz Final */}
+        <section id="final-quiz" className="pt-6">
+          <h2 className="text-3xl font-bold text-purple-800 mb-8">🎯 Quiz Final da Lição</h2>
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+            <p className="text-yellow-800">
+              <strong>📋 Instruções:</strong> Complete o quiz abaixo para finalizar esta lição. 
+              Você precisa acertar pelo menos <strong>70%</strong> das perguntas para avançar para a próxima lição.
+            </p>
+          </div>
+          <QuizSection 
+            quizConfig={lesson2Quiz} 
+            onQuizComplete={handleQuizComplete} 
+          />
         </section>
 
         {/* Mensagem de status do Quiz */}
