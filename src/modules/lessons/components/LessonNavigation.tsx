@@ -7,7 +7,7 @@ interface LessonNavigationProps {
   nextLessonId: string;
   prevText: string;
   nextText: string;
-  isCompleted?: boolean; // Esta prop agora controla se a próxima lição está habilitada
+  isCompleted?: boolean;
 }
 
 const LessonNavigation: React.FC<LessonNavigationProps> = ({ 
@@ -15,18 +15,25 @@ const LessonNavigation: React.FC<LessonNavigationProps> = ({
   nextLessonId, 
   prevText, 
   nextText,
-  isCompleted = false // Padrão para false
+  isCompleted = false
 }) => {
+  // Função para construir o caminho correto
+  const buildPath = (lessonId: string) => {
+    if (lessonId === 'dashboard') {
+      return '/app/dashboard';
+    }
+    return `/app/lessons/${lessonId}`;
+  };
+
   return (
     <div className="flex justify-between items-center mt-10 pt-6 border-t border-gray-200">
       <Link 
-        to={prevLessonId === 'dashboard' ? '/dashboard' : `/lessons/${prevLessonId}`}
+        to={buildPath(prevLessonId)}
         className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors"
       >
         ← {prevText}
       </Link>
       
-      {/* Indicador de progresso (opcional, pode ser removido se a ProgressBar já for suficiente) */}
       {isCompleted && (
         <div className="flex items-center text-green-600">
           <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -37,7 +44,7 @@ const LessonNavigation: React.FC<LessonNavigationProps> = ({
       )}
       
       <Link 
-        to={isCompleted ? `/lessons/${nextLessonId}` : '#'} // Navega apenas se estiver completo
+        to={isCompleted ? buildPath(nextLessonId) : '#'}
         className={`px-4 py-2 rounded-lg transition-colors ${
           isCompleted 
             ? 'bg-purple-600 hover:bg-purple-700 text-white' 
@@ -45,7 +52,7 @@ const LessonNavigation: React.FC<LessonNavigationProps> = ({
         }`}
         onClick={(e) => {
           if (!isCompleted) {
-            e.preventDefault(); // Previne a navegação se não estiver completo
+            e.preventDefault();
           }
         }}
       >

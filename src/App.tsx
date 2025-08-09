@@ -13,6 +13,7 @@ import RegisterPage from './modules/auth/pages/RegisterPage';
 import HomePage from './modules/common/pages/HomePage';
 import DashboardPage from './modules/common/pages/DashboardPage';
 import PronounVerbLesson from './modules/lessons/pages/PronounVerbLesson';
+import Lesson2 from './modules/lessons/pages/Lesson2'; // 🆕 NOVO IMPORT
 import ExercisePage from './modules/exercises/pages/ExercisePage';
 
 // Importando o layout
@@ -42,9 +43,9 @@ function App() {
               <Route index element={<HomePage />} />
               <Route path="dashboard" element={<DashboardPage />} />
               
-              {/* Rotas das lições - mantendo o padrão que você já usa */}
+              {/* Rotas das lições */}
               <Route path="lessons/lesson1" element={<PronounVerbLesson />} />
-              <Route path="lessons/lesson2" element={<div>Lição 2 em desenvolvimento</div>} />
+              <Route path="lessons/lesson2" element={<Lesson2 />} /> {/* 🔄 ATUALIZADO */}
               <Route path="lessons/lesson3" element={<div>Lição 3 em desenvolvimento</div>} />
               <Route path="lessons/lesson4" element={<div>Lição 4 em desenvolvimento</div>} />
               <Route path="lessons/lesson5" element={<div>Lição 5 em desenvolvimento</div>} />

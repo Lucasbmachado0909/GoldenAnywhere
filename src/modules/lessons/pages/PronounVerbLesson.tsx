@@ -259,10 +259,9 @@ const PronounVerbLesson: React.FC = () => {
           </div>
         )}
         
-        {/* Navegação da lição */}
-        <LessonNavigation 
-          prevLessonId="dashboard" 
-          nextLessonId="2"
+         <LessonNavigation 
+          prevLessonId="/app/dashboard" // 🔄 ATUALIZADO: caminho completo
+          nextLessonId="/app/lessons/lesson2" // 🔄 ATUALIZADO: caminho completo
           prevText="Voltar ao Dashboard"
           nextText="Próxima Lição: Substantivos e Artigos"
           isCompleted={isQuizPassed}
