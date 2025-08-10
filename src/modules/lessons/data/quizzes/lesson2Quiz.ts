@@ -1,155 +1,115 @@
 // src/modules/lessons/data/quizzes/lesson2Quiz.ts
-// src/modules/lessons/data/quizzes/lesson2Quiz.ts
 import type { QuizConfig } from '../../../../types';
 
 export const lesson2Quiz: QuizConfig = {
-  id: 'lesson2-nouns-articles',
-  title: 'Quiz Final da Lição 2: Substantivos e Artigos',
-  description: 'Teste seus conhecimentos sobre substantivos (singular/plural) e o uso correto dos artigos (a, an, the). Você precisa acertar pelo menos 70% das perguntas para passar para a próxima lição.',
+  id: 'lesson2-verbs-prepositions',
+  title: 'Quiz da Lição 2: Verbos e Preposições Essenciais',
+  description: 'Teste seu conhecimento sobre o uso correto de verbos no presente simples e preposições de lugar comuns. Você precisa acertar pelo menos 70% para avançar.',
   passingScorePercentage: 70,
   questions: [
-    // Parte 1: Artigos (a/an/the)
     {
       id: 'q1',
-      question: 'Choose the correct article: I have (___) apple.',
+      question: 'Qual frase está gramaticalmente correta?',
       type: 'multiple-choice',
-      options: [{ text: 'a', value: 'a' }, { text: 'an', value: 'an' }, { text: 'the', value: 'the' }],
-      correctAnswer: 'an',
+      options: [
+        { text: 'I go to home now.', value: 'a' },
+        { text: 'I go home now.', value: 'b' }
+      ],
+      correctAnswer: 'b',
       points: 1,
-      explanation: 'Use "an" before words that start with a vowel sound (a, e, i, o, u).'
+      explanation: "A expressão 'go home' é uma exceção e não utiliza a preposição 'to'. 'Home' aqui funciona como um advérbio de direção."
     },
     {
       id: 'q2',
-      question: 'Choose the correct article: She is (___) doctor.',
+      question: 'Complete a frase: We go ___ supermarket on Saturday.',
       type: 'multiple-choice',
-      options: [{ text: 'a', value: 'a' }, { text: 'an', value: 'an' }, { text: 'the', value: 'the' }],
-      correctAnswer: 'a',
+      options: [
+        { text: 'to', value: 'a' },
+        { text: 'to the', value: 'b' },
+        { text: 'at the', value: 'c' }
+      ],
+      correctAnswer: 'b',
       points: 1,
-      explanation: 'Use "a" before words that start with a consonant sound.'
+      explanation: "Usamos 'to the' para indicar movimento em direção a um lugar físico e específico como 'supermarket'."
     },
     {
       id: 'q3',
-      question: 'Choose the correct article: (___) sun is hot today.',
+      question: 'Escolha a opção correta para completar a frase: He ___ football on weekends.',
       type: 'multiple-choice',
-      options: [{ text: 'a', value: 'a' }, { text: 'an', value: 'an' }, { text: 'the', value: 'the' }],
-      correctAnswer: 'the',
+      options: [
+        { text: 'play', value: 'a' },
+        { text: 'plays', value: 'b' },
+        { text: 'playing', value: 'c' }
+      ],
+      correctAnswer: 'b',
       points: 1,
-      explanation: 'Use "the" for unique things, like the sun.'
+      explanation: " He/She/It no Presente Simples: acrescenta “-s” ao verbo. “He plays football.”"
     },
     {
       id: 'q4',
-      question: 'Choose the correct article: He wants (___) new car.',
+      question: 'Escolha a opção correta para completar a frase: She ___ at 8 a.m.',
       type: 'multiple-choice',
-      options: [{ text: 'a', value: 'a' }, { text: 'an', value: 'an' }, { text: 'the', value: 'the' }],
+      options: [
+        { text: 'goes to work', value: 'a' },
+        { text: 'go to work', value: 'b' },
+        { text: 'goes to the work', value: 'c' }
+      ],
       correctAnswer: 'a',
       points: 1,
-      explanation: 'Use "a" before words that start with a consonant sound.'
+      explanation: "A forma correta é 'goes' para a 3ª pessoa (She). A expressão 'go to work' (ir para o trabalho como uma atividade/função) não usa o artigo 'the'."
     },
     {
       id: 'q5',
-      question: 'Choose the correct article: This is (___) amazing story.',
+      question: 'Qual comando está correto?',
       type: 'multiple-choice',
-      options: [{ text: 'a', value: 'a' }, { text: 'an', value: 'an' }, { text: 'the', value: 'the' }],
-      correctAnswer: 'an',
+      options: [
+        { text: 'Come to here.', value: 'a' },
+        { text: 'Go to there.', value: 'b' },
+        { text: 'Come here.', value: 'c' }
+      ],
+      correctAnswer: 'c',
       points: 1,
-      explanation: 'Use "an" before words that start with a vowel sound.'
+      explanation: "As palavras 'here' e 'there' já indicam direção, por isso não usamos a preposição 'to' com elas. As formas corretas são 'Come here' e 'Go there'."
     },
-    // Parte 2: Singular e Plural de Substantivos
     {
       id: 'q6',
-      question: 'What is the plural of "cat"?',
+      question: 'Complete a frase: She ___ chicken for dinner.',
       type: 'multiple-choice',
-      options: [{ text: 'cats', value: 'cats' }, { text: 'cates', value: 'cates' }, { text: 'caties', value: 'caties' }],
-      correctAnswer: 'cats',
+      options: [
+        { text: 'eat', value: 'a' },
+        { text: 'eats', value: 'b' },
+        { text: 'eating', value: 'c' }
+      ],
+      correctAnswer: 'b',
       points: 1,
-      explanation: 'Most nouns form the plural by adding -s.'
+      explanation: "Para a 3ª pessoa do singular (He, She, It) no Presente Simples, adicionamos '-s' ao final do verbo. Portanto, 'eat' se torna 'eats'."
     },
     {
       id: 'q7',
-      question: 'What is the plural of "child"?',
+      question: 'Complete a frase: They go ___ on weekends.',
       type: 'multiple-choice',
-      options: [{ text: 'childs', value: 'childs' }, { text: 'children', value: 'children' }, { text: 'childes', value: 'childes' }],
-      correctAnswer: 'children',
+      options: [
+        { text: 'to park', value: 'a' },
+        { text: 'at the park', value: 'b' },
+        { text: 'to the park', value: 'c' }
+      ],
+      correctAnswer: 'c',
       points: 1,
-      explanation: '"Child" is an irregular noun; its plural is "children".'
+      explanation: "'Park' (parque) é um lugar físico específico. Usamos 'to the' para indicar movimento em direção a ele."
     },
     {
       id: 'q8',
-      question: 'What is the plural of "box"?',
-      type: 'multiple-choice',
-      options: [{ text: 'boxs', value: 'boxs' }, { text: 'boxes', value: 'boxes' }, { text: 'boxies', value: 'boxies' }],
-      correctAnswer: 'boxes',
-      points: 1,
-      explanation: 'Nouns ending in -x, -ch, -s, -sh, -z add -es to form the plural.'
-    },
-    {
-      id: 'q9',
-      question: 'What is the plural of "man"?',
-      type: 'multiple-choice',
-      options: [{ text: 'mans', value: 'mans' }, { text: 'men', value: 'men' }, { text: 'manes', value: 'manes' }],
-      correctAnswer: 'men',
-      points: 1,
-      explanation: '"Man" is an irregular noun; its plural is "men".'
-    },
-    {
-      id: 'q10',
-      question: 'What is the plural of "city"?',
-      type: 'multiple-choice',
-      options: [{ text: 'citys', value: 'citys' }, { text: 'cities', value: 'cities' }, { text: 'cityes', value: 'cityes' }],
-      correctAnswer: 'cities',
-      points: 1,
-      explanation: 'Nouns ending in a consonant + y, change y to i and add -es.'
-    },
-    // Parte 3: Compreensão de Leitura com Substantivos e Artigos
-    {
-      id: 'rc1',
-      question: 'How many cats does Sarah have?',
       type: 'reading-comprehension',
-      readingText: 'Sarah has a dog and two cats. The dog is big, but the cats are small. She loves her animals very much. Every day, she gives them food and water.',
-      options: [{ text: 'One', value: 'One' }, { text: 'Two', value: 'Two' }, { text: 'Three', value: 'Three' }],
-      correctAnswer: 'Two',
+      readingText: 'My name is Alex. I wake up at 7 a.m. every day. I drink coffee in the morning and I eat bread with cheese. I go to work by bus. I work in an office.',
+      question: 'De acordo com o texto, o que Alex bebe pela manhã?',
+      options: [
+        { text: 'Tea', value: 'a' },
+        { text: 'Coffee', value: 'b' },
+        { text: 'Milk', value: 'c' }
+      ],
+      correctAnswer: 'b',
       points: 1,
-      explanation: 'The text states: "Sarah has a dog and two cats."'
-    },
-    {
-      id: 'rc2',
-      question: 'Is the dog big or small?',
-      type: 'reading-comprehension',
-      readingText: 'Sarah has a dog and two cats. The dog is big, but the cats are small. She loves her animals very much. Every day, she gives them food and water.',
-      options: [{ text: 'Big', value: 'Big' }, { text: 'Small', value: 'Small' }],
-      correctAnswer: 'Big',
-      points: 1,
-      explanation: 'The text states: "The dog is big."'
-    },
-    {
-      id: 'rc3',
-      question: 'What does Sarah give her animals every day?',
-      type: 'reading-comprehension',
-      readingText: 'Sarah has a dog and two cats. The dog is big, but the cats are small. She loves her animals very much. Every day, she gives them food and water.',
-      options: [{ text: 'Toys', value: 'Toys' }, { text: 'Food and water', value: 'Food and water' }, { text: 'Beds', value: 'Beds' }],
-      correctAnswer: 'Food and water',
-      points: 1,
-      explanation: 'The text states: "Every day, she gives them food and water."'
-    },
-    {
-      id: 'rc4',
-      question: 'Which article is used for "dog" when it\'s first mentioned?',
-      type: 'reading-comprehension',
-      readingText: 'Sarah has a dog and two cats. The dog is big, but the cats are small. She loves her animals very much. Every day, she gives them food and water.',
-      options: [{ text: 'a', value: 'a' }, { text: 'an', value: 'an' }, { text: 'the', value: 'the' }],
-      correctAnswer: 'a',
-      points: 1,
-      explanation: '"Sarah has a dog" uses the indefinite article "a" because it\'s the first mention of a non-specific dog.'
-    },
-    {
-      id: 'rc5',
-      question: 'Which article is used for "cats" when they are mentioned again?',
-      type: 'reading-comprehension',
-      readingText: 'Sarah has a dog and two cats. The dog is big, but the cats are small. She loves her animals very much. Every day, she gives them food and water.',
-      options: [{ text: 'a', value: 'a' }, { text: 'an', value: 'an' }, { text: 'the', value: 'the' }],
-      correctAnswer: 'the',
-      points: 1,
-      explanation: '"The cats are small" uses the definite article "the" because the cats have already been introduced and are now specific.'
-    },
-  ],
+      explanation: "O texto afirma claramente: 'I drink coffee in the morning...'"
+    }
+  ]
 };

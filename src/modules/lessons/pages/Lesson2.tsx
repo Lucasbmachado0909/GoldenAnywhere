@@ -10,11 +10,11 @@ import LessonNavigation from '../components/LessonNavigation';
 import SentenceCorrectionExercise from '../../exercises/components/SentenceCorrectionExercise';
 import ReadingComprehensionExercise from '../../exercises/components/ReadingComprehensionExercise';
 import GrammarExercise from '../../exercises/components/GrammarExercise';
-import VerbFillExercise from '../../exercises/components/VerbFillExercise';
 import TranslationExercise from '../../exercises/components/TranslationExercise';
+import ListeningExercise from '../../exercises/components/ListeningExercise'; // 🆕 NOVO IMPORT
 import QuizSection from '../components/QuizSection';
 import { lesson2Quiz } from '../data/quizzes/lesson2Quiz';
-import type { ReadingComprehensionQuestion, VideoResource, QuizSummary } from '../../../types';
+import type { ListeningMultipleChoiceQuestion, ReadingComprehensionQuestion, VideoResource, QuizSummary } from '../../../types';
 
 const Lesson2: React.FC = () => {
   // Estados para o quiz (mesmo padrão da Lição 1)
@@ -198,13 +198,6 @@ const Lesson2: React.FC = () => {
     }
   ];
 
-  // Dados para o exercício de preenchimento com verbos (adaptados para Lição 2)
-  const verbFillSentences = [
-    { prefix: "She", suffix: "to school every day.", answer: "goes" },
-    { prefix: "They", suffix: "pizza on Fridays.", answer: "eat" },
-    { prefix: "I", suffix: "coffee in the morning.", answer: "drink" }
-  ];
-
   // 🆕 NOVOS DADOS: Exercício de Tradução
   const translationQuestions = [
     {
@@ -239,7 +232,21 @@ const Lesson2: React.FC = () => {
     }
   ];
 
-  // 🔧 REMOVIDA a variável 'listeningQuestions' que não estava sendo usada
+  // Dados para o exercício de listening (adaptados para Lição 2)
+  const listeningQuestions: ListeningMultipleChoiceQuestion[] = [
+    {
+      questionText: "What animal is mentioned?",
+      audioUrl: "/audio/lessons/lesson2/What animal is.mp3",
+      options: ["dog", "cat", "bird", "fish"],
+      correctOptionIndex: 0
+    },
+    {
+      questionText: "What drink is mentioned?",
+      audioUrl: "/audio/lessons/lesson2/The drink is.mp3",
+      options: ["water", "juice", "soda", "coffee"],
+      correctOptionIndex: 3
+    }
+  ];
 
   // Handler para a conclusão do quiz
   const handleQuizComplete = (summary: QuizSummary) => {
@@ -320,18 +327,18 @@ const Lesson2: React.FC = () => {
             />
           </div>
           
-          {/* Exercício de preenchimento com verbos */}
-          <div className="mt-10">
-            <VerbFillExercise sentences={verbFillSentences} />
-          </div>
-          
-          {/* 🆕 NOVO EXERCÍCIO: Translation Exercise */}
+          {/* Exercício de tradução */}
           <div className="mt-10">
             <TranslationExercise 
               title="Exercício de Tradução"
               instruction="Traduza para o inglês:"
               questions={translationQuestions}
             />
+          </div>
+          
+          {/* 🆕 NOVO EXERCÍCIO: Listening Exercise */}
+          <div className="mt-10">
+            <ListeningExercise questions={listeningQuestions} />
           </div>
         </section>
         
