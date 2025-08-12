@@ -1,6 +1,5 @@
 // src/modules/lessons/components/QuestionFormationSection.tsx
 import React from 'react';
-import AudioButton from '../../common/components/AudioButton';
 
 interface QuestionFormationSectionProps {
   title: string;
