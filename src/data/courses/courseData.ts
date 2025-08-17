@@ -22,8 +22,8 @@ export const courses: Course[] = [
   },
   {
     id: 'lesson2',
-    title: 'Lição 2: Frases Negativas',
-    description: 'Aprenda a formar frases negativas com "don\'t" e "doesn\'t".',
+    title: 'Lição 2: Verbos no Presente Simples',
+    description: 'Aprenda a formar frases com o verbos no tempo correto.',
     status: 'available',
     colorAccent: 'indigo',
     level: 'beginner',
