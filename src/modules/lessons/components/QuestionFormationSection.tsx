@@ -589,47 +589,6 @@ const QuestionFormationSection: React.FC<QuestionFormationSectionProps> = ({
         </div>
       </div>
 
-      {/* Vocabulary List */}
-      <div className="mb-10">
-        <h4 className="text-lg font-bold text-purple-700 mb-4 flex items-center">
-          <span className="mr-2">📚</span>
-          Vocabulary List
-        </h4>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <h5 className="font-semibold text-gray-800 mb-3">Places:</h5>
-            <div className="text-sm text-gray-700 space-y-1 ml-4">
-              <div>• at the club, restaurant, bank, bar, school, home, work, cinema, party</div>
-              <div>• Cities/Countries: Brazil, New York, London</div>
-              <div>• General: downtown, in class</div>
-            </div>
-          </div>
-
-          <div>
-            <h5 className="font-semibold text-gray-800 mb-3">Time expressions:</h5>
-            <div className="text-sm text-gray-700 space-y-1 ml-4">
-              <div>• Days of the week: on Monday, on Saturday</div>
-              <div>• Months: in January, in February, in March, in April, in May, in June, in July, in August, in September, in October, in November, in December</div>
-              <div>• Times of day: in the morning, in the evening, in the afternoon, at night</div>
-              <div>• Special times: at night, at lunch, at dinner, at breakfast</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-4">
-          <h5 className="font-semibold text-gray-800 mb-2">Examples:</h5>
-          <div className="space-y-2 ml-4">
-            <div className="p-2 bg-gray-50 rounded">
-              <strong>When is the meeting?</strong> – On Monday morning.
-            </div>
-            <div className="p-2 bg-gray-50 rounded">
-              <strong>When is Lisa's party?</strong> – In March.
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Study Materials & Exercises */}
       <div className="mb-6">
         <h4 className="text-lg font-bold text-purple-700 mb-4 flex items-center">
