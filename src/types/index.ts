@@ -167,3 +167,5 @@ export interface QuizSummary {
   passed: boolean;
   results: QuizResult[];
 }
+
+export * from './audio.types';

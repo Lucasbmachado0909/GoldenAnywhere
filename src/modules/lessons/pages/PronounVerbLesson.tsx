@@ -6,7 +6,6 @@ import VideoSection from '../components/VideoSection';
 import PronounsSection from '../components/PronounsSection';
 import VerbsSection from '../components/VerbsSection';
 import SentenceStructureSection from '../components/SentenceStructureSection';
-import FinalTaskSection from '../components/FinalTaskSection';
 import LessonNavigation from '../components/LessonNavigation';
 import InteractiveExercises from '../../exercises/components/InteractiveExercises';
 import SentenceCorrectionExercise from '../../exercises/components/SentenceCorrectionExercise';
@@ -213,13 +212,6 @@ const PronounVerbLesson: React.FC = () => {
             <VerbFillExercise sentences={verbFillSentences} />
           </div>
         </section>
-        
-        {/* Tarefa final */}
-        <FinalTaskSection 
-          title="Tarefa Final"
-          subtitle="Aplique o que você aprendeu nesta lição"
-          tasks={["Escreva 3 frases sobre você usando pronomes e verbos diferentes."]}
-        />
         
         {/* Seção do Quiz Final */}
         <section id="final-quiz" className="pt-6">
