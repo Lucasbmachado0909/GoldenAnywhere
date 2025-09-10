@@ -10,7 +10,6 @@ import LessonNavigation from '../components/LessonNavigation';
 import ReadingComprehensionExercise from '../../exercises/components/ReadingComprehensionExercise';
 import GrammarExercise from '../../exercises/components/GrammarExercise';
 import TranslationExercise from '../../exercises/components/TranslationExercise';
-import ListeningExercise from '../../exercises/components/ListeningExercise';
 import AudioRecordingExercise from '../../exercises/components/AudioRecordingExercise';
 import QuizSection from '../components/QuizSection';
 import { lesson4Quiz } from '../data/quizzes/lesson4Quiz';
@@ -212,23 +211,6 @@ const Lesson4: React.FC = () => {
               instruction="Traduza para o inglês usando object pronouns:"
               questions={translationQuestions}
             />
-          </div>
-          
-          {/* Exercício de Listening - ✅ CORRIGIDO */}
-          <div className="mt-10">
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-green-100 p-2 rounded-lg">
-                  <span className="text-2xl">🎧</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-purple-800">Listening Exercise</h3>
-                  <p className="text-gray-600">Ouça e escolha a opção correta:</p>
-                </div>
-              </div>
-              
-              <ListeningExercise questions={lesson4Exercises.listening} />
-            </div>
           </div>
         </section>
 
