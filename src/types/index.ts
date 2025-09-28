@@ -51,10 +51,12 @@ export interface SentenceCorrectionQuestion {
 
 // Tipos para atividades de compreensão de leitura
 export interface ReadingComprehensionQuestion {
+  id?: number; // ADICIONADO para compatibilidade
   question: string;
   questionText?: string; // Adicionado para compatibilidade
   options?: string[];
   correctAnswer: string;
+  explanation?: string; // ADICIONADO para compatibilidade
 }
 
 // Tipos para atividades de escuta e transcrição
@@ -125,6 +127,21 @@ export interface SentenceExample {
   portuguese: string;
 }
 
+// 🆕 TIPOS PARA VOCABULÁRIO - COMPATÍVEIS COM VOCABULARYSECTION
+export interface VocabularyItem {
+  word: string;
+  translation: string;
+  audioSrc?: string;
+}
+
+export interface VocabularyGroup {
+  name: string; // OBRIGATÓRIO para VocabularySection
+  displayText: string; // OBRIGATÓRIO para VocabularySection
+  audioSrc: string; // OBRIGATÓRIO para VocabularySection
+  title?: string; // OPCIONAL para compatibilidade
+  items: VocabularyItem[];
+}
+
 // 🆕 NOVOS TIPOS PARA O QUIZ
 export interface QuizOption {
   text: string;
@@ -166,6 +183,37 @@ export interface QuizSummary {
   scorePercentage: number;
   passed: boolean;
   results: QuizResult[];
+}
+
+// �� TIPOS PARA EXERCÍCIOS ESPECÍFICOS DA LIÇÃO 5 - CORRIGIDOS
+export interface GrammarExerciseQuestion {
+  id: number;
+  question: string;
+  sentence: string;
+  options: string[];
+  correctAnswer: number; // MUDADO PARA number (índice da resposta)
+  explanation: string;
+}
+
+export interface TranslationQuestion {
+  id: number;
+  portuguese: string;
+  correctAnswer: string;
+  explanation: string;
+}
+
+export interface FamilyQuestion {
+  id: number;
+  question: string;
+  sampleAnswer: string;
+  explanation: string;
+}
+
+// 🆕 TIPO PARA MATCHING EXERCISE
+export interface MatchingExerciseItem {
+  word: string;
+  definition: string;
+  correct: string;
 }
 
 export * from './audio.types';
