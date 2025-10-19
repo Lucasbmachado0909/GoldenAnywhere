@@ -1,5 +1,6 @@
 // src/modules/lessons/components/PossessiveAdjectivesSection.tsx
 import React from 'react';
+import AudioButton from '../../common/components/AudioButton';
 import { possessiveAdjectives } from '../data/lesson5Data';
 
 interface PossessiveAdjectivesSectionProps {
@@ -39,7 +40,7 @@ const PossessiveAdjectivesSection: React.FC<PossessiveAdjectivesSectionProps> = 
         </div>
       </div>
 
-      {/* Tabela de Possessive Adjectives - SEM COLUNA DE ÁUDIO */}
+      {/* Tabela de Possessive Adjectives */}
       <div className="mb-6">
         <h4 className="text-lg font-bold text-purple-700 mb-4 flex items-center gap-2">
           <span>📋</span>
@@ -59,7 +60,9 @@ const PossessiveAdjectivesSection: React.FC<PossessiveAdjectivesSectionProps> = 
                 <th className="border border-gray-300 px-4 py-3 text-left font-bold text-purple-800">
                   Example (Exemplo)
                 </th>
-                {/* 🗑️ REMOVIDA COLUNA DE ÁUDIO */}
+                <th className="border border-gray-300 px-4 py-3 text-left font-bold text-purple-800">
+                  Áudio
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -77,7 +80,13 @@ const PossessiveAdjectivesSection: React.FC<PossessiveAdjectivesSectionProps> = 
                       <p className="text-sm text-gray-600 italic">{item.translation}</p>
                     </div>
                   </td>
-                  {/* 🗑️ REMOVIDA CÉLULA DE ÁUDIO */}
+                  <td className="border border-gray-300 px-4 py-3">
+                    <AudioButton 
+                      text={item.example}
+                      audioSrc={`/audio/lessons/lesson5/possessive_${index + 1}.mp3`}
+                      className="text-sm"
+                    />
+                  </td>
                 </tr>
               ))}
             </tbody>

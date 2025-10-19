@@ -16,7 +16,8 @@ import PronounVerbLesson from './modules/lessons/pages/PronounVerbLesson';
 import Lesson2 from './modules/lessons/pages/Lesson2';
 import Lesson3 from './modules/lessons/pages/Lesson3';
 import Lesson4 from './modules/lessons/pages/Lesson4';
-import Lesson5 from './modules/lessons/pages/Lesson5'; // 🆕 NOVO IMPORT - LIÇÃO 5
+import Lesson5 from './modules/lessons/pages/Lesson5';
+import Lesson6 from './modules/lessons/pages/Lesson6'; // 🆕 NOVO IMPORT - LIÇÃO 6
 import ExercisePage from './modules/exercises/pages/ExercisePage';
 
 // Importando o layout
@@ -51,8 +52,9 @@ function App() {
               <Route path="lessons/lesson2" element={<Lesson2 />} />
               <Route path="lessons/lesson3" element={<Lesson3 />} />
               <Route path="lessons/lesson4" element={<Lesson4 />} />
-              <Route path="lessons/lesson5" element={<Lesson5 />} /> {/* 🆕 ATUALIZADO - LIÇÃO 5 ATIVA */}
-              <Route path="lessons/lesson6" element={<div>Lição 6 em desenvolvimento</div>} />
+              <Route path="lessons/lesson5" element={<Lesson5 />} />
+              <Route path="lessons/lesson6" element={<Lesson6 />} /> {/* 🆕 NOVO - LIÇÃO 6 ATIVA */}
+              <Route path="lessons/lesson7" element={<div>Lição 7 em desenvolvimento</div>} />
               
               <Route path="exercises/:exerciseId" element={<ExercisePage />} />
             </Route>
