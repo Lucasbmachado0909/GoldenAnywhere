@@ -1,6 +1,5 @@
 // src/modules/lessons/components/PossessiveAdjectivesSection.tsx
 import React from 'react';
-import AudioButton from '../../common/components/AudioButton';
 import { possessiveAdjectives } from '../data/lesson5Data';
 
 interface PossessiveAdjectivesSectionProps {
@@ -60,9 +59,6 @@ const PossessiveAdjectivesSection: React.FC<PossessiveAdjectivesSectionProps> = 
                 <th className="border border-gray-300 px-4 py-3 text-left font-bold text-purple-800">
                   Example (Exemplo)
                 </th>
-                <th className="border border-gray-300 px-4 py-3 text-left font-bold text-purple-800">
-                  Áudio
-                </th>
               </tr>
             </thead>
             <tbody>
@@ -79,13 +75,6 @@ const PossessiveAdjectivesSection: React.FC<PossessiveAdjectivesSectionProps> = 
                       <p className="font-medium text-gray-800">{item.example}</p>
                       <p className="text-sm text-gray-600 italic">{item.translation}</p>
                     </div>
-                  </td>
-                  <td className="border border-gray-300 px-4 py-3">
-                    <AudioButton 
-                      text={item.example}
-                      audioSrc={`/audio/lessons/lesson5/possessive_${index + 1}.mp3`}
-                      className="text-sm"
-                    />
                   </td>
                 </tr>
               ))}
